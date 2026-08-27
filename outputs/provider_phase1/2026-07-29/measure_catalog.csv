@@ -1,0 +1,49 @@
+﻿dataset_id,measure_id,measure_name,row_count,measurement_start_dates,measurement_end_dates,footnoted_row_count,suppressed_row_count,source_numeric_fields
+632h-zaca,EDAC_30_AMI,Hospital return days for heart attack patients,4792,07/01/2021,06/30/2024,3278,3239,Score|Lower Estimate|Higher Estimate
+632h-zaca,EDAC_30_HF,Hospital return days for heart failure patients,4792,07/01/2021,06/30/2024,1700,1641,Score|Lower Estimate|Higher Estimate
+632h-zaca,EDAC_30_PN,Hospital return days for pneumonia patients,4792,07/01/2021,06/30/2024,1225,1161,Score|Lower Estimate|Higher Estimate
+632h-zaca,Hybrid_HWR,Hybrid Hospital-Wide All-Cause Readmission Measure (HWR),4792,07/01/2023,06/30/2024,647,4792,Score|Lower Estimate|Higher Estimate
+632h-zaca,OP_32,"Rate of unplanned hospital visits after colonoscopy (per 1,000 colonoscopies)",4792,01/01/2022,12/31/2024,1710,4792,Score|Lower Estimate|Higher Estimate
+632h-zaca,OP_35_ADM,Rate of inpatient admissions for patients receiving outpatient chemotherapy,4792,01/01/2024,12/31/2024,3303,4792,Score|Lower Estimate|Higher Estimate
+632h-zaca,OP_35_ED,Rate of emergency department (ED) visits for patients receiving outpatient chemotherapy,4792,01/01/2024,12/31/2024,3303,4792,Score|Lower Estimate|Higher Estimate
+632h-zaca,OP_36,Ratio of unplanned hospital visits after hospital outpatient surgery,4792,01/01/2024,12/31/2024,2121,4792,Score|Lower Estimate|Higher Estimate
+632h-zaca,READM_30_AMI,Acute Myocardial Infarction (AMI) 30-Day Readmission Rate,4792,07/01/2021,06/30/2024,3027,4792,Score|Lower Estimate|Higher Estimate
+632h-zaca,READM_30_CABG,Rate of readmission for CABG,4792,07/01/2021,06/30/2024,3947,4792,Score|Lower Estimate|Higher Estimate
+632h-zaca,READM_30_COPD,Rate of readmission for chronic obstructive pulmonary disease (COPD) patients,4792,07/01/2021,06/30/2024,2163,4792,Score|Lower Estimate|Higher Estimate
+632h-zaca,READM_30_HF,Heart failure (HF) 30-Day Readmission Rate,4792,07/01/2021,06/30/2024,1715,4792,Score|Lower Estimate|Higher Estimate
+632h-zaca,READM_30_HIP_KNEE,Rate of readmission after hip/knee replacement,4792,07/01/2021,06/30/2024,3213,4792,Score|Lower Estimate|Higher Estimate
+632h-zaca,READM_30_PN,Pneumonia (PN) 30-Day Readmission Rate,4792,07/01/2021,06/30/2024,1240,4792,Score|Lower Estimate|Higher Estimate
+4gkm-5ypv,EDAC_30_AMI,Hospital return days for heart attack patients,56,07/01/2021,06/30/2024,4,56,
+4gkm-5ypv,EDAC_30_HF,Hospital return days for heart failure patients,56,07/01/2021,06/30/2024,4,56,
+4gkm-5ypv,EDAC_30_PN,Hospital return days for pneumonia patients,56,07/01/2021,06/30/2024,4,56,
+4gkm-5ypv,Hybrid_HWR,Hybrid Hospital-Wide All-Cause Readmission Measure (HWR),56,07/01/2023,06/30/2024,4,56,
+4gkm-5ypv,OP_32,"Rate of unplanned hospital visits after colonoscopy (per 1,000 colonoscopies)",56,01/01/2022,12/31/2024,4,56,
+4gkm-5ypv,OP_35_ADM,Rate of inpatient admissions for patients receiving outpatient chemotherapy,56,01/01/2024,12/31/2024,4,56,
+4gkm-5ypv,OP_35_ED,Rate of emergency department (ED) visits for patients receiving outpatient chemotherapy,56,01/01/2024,12/31/2024,4,56,
+4gkm-5ypv,OP_36,Ratio of unplanned hospital visits after hospital outpatient surgery,56,01/01/2024,12/31/2024,4,56,
+4gkm-5ypv,READM_30_AMI,Acute Myocardial Infarction (AMI) 30-Day Readmission Rate,56,07/01/2021,06/30/2024,4,56,
+4gkm-5ypv,READM_30_CABG,Rate of readmission for CABG,56,07/01/2021,06/30/2024,4,56,
+4gkm-5ypv,READM_30_COPD,Rate of readmission for chronic obstructive pulmonary disease (COPD) patients,56,07/01/2021,06/30/2024,4,56,
+4gkm-5ypv,READM_30_HF,Heart failure (HF) 30-Day Readmission Rate,56,07/01/2021,06/30/2024,4,56,
+4gkm-5ypv,READM_30_HIP_KNEE,Rate of readmission after hip/knee replacement,56,07/01/2021,06/30/2024,4,56,
+4gkm-5ypv,READM_30_PN,Pneumonia (PN) 30-Day Readmission Rate,56,07/01/2021,06/30/2024,4,56,
+cvcs-xecj,EDAC_30_AMI,Hospital return days for heart attack patients,1,07/01/2021,06/30/2024,0,1,National Rate
+cvcs-xecj,EDAC_30_HF,Hospital return days for heart failure patients,1,07/01/2021,06/30/2024,0,1,National Rate
+cvcs-xecj,EDAC_30_PN,Hospital return days for pneumonia patients,1,07/01/2021,06/30/2024,0,1,National Rate
+cvcs-xecj,Hybrid_HWR,Hybrid Hospital-Wide All-Cause Readmission Measure (HWR),1,07/01/2023,06/30/2024,0,1,National Rate
+cvcs-xecj,OP_32,"Rate of unplanned hospital visits after colonoscopy (per 1,000 colonoscopies)",1,01/01/2022,12/31/2024,0,1,National Rate
+cvcs-xecj,OP_35_ADM,Rate of inpatient admissions for patients receiving outpatient chemotherapy,1,01/01/2024,12/31/2024,0,1,National Rate
+cvcs-xecj,OP_35_ED,Rate of emergency department (ED) visits for patients receiving outpatient chemotherapy,1,01/01/2024,12/31/2024,0,1,National Rate
+cvcs-xecj,OP_36,Ratio of unplanned hospital visits after hospital outpatient surgery,1,01/01/2024,12/31/2024,0,1,National Rate
+cvcs-xecj,READM_30_AMI,Acute Myocardial Infarction (AMI) 30-Day Readmission Rate,1,07/01/2021,06/30/2024,0,1,National Rate
+cvcs-xecj,READM_30_CABG,Rate of readmission for CABG,1,07/01/2021,06/30/2024,0,1,National Rate
+cvcs-xecj,READM_30_COPD,Rate of readmission for chronic obstructive pulmonary disease (COPD) patients,1,07/01/2021,06/30/2024,0,1,National Rate
+cvcs-xecj,READM_30_HF,Heart failure (HF) 30-Day Readmission Rate,1,07/01/2021,06/30/2024,0,1,National Rate
+cvcs-xecj,READM_30_HIP_KNEE,Rate of readmission after hip/knee replacement,1,07/01/2021,06/30/2024,0,1,National Rate
+cvcs-xecj,READM_30_PN,Pneumonia (PN) 30-Day Readmission Rate,1,07/01/2021,06/30/2024,0,1,National Rate
+9n3s-kdb3,,READM-30-AMI-HRRP,3055,07/01/2021,06/30/2024,1380,1815,Number of Discharges|Excess Readmission Ratio|Predicted Readmission Rate|Expected Readmission Rate|Number of Readmissions
+9n3s-kdb3,,READM-30-CABG-HRRP,3055,07/01/2021,06/30/2024,2211,2692,Number of Discharges|Excess Readmission Ratio|Predicted Readmission Rate|Expected Readmission Rate|Number of Readmissions
+9n3s-kdb3,,READM-30-COPD-HRRP,3055,07/01/2021,06/30/2024,803,1510,Number of Discharges|Excess Readmission Ratio|Predicted Readmission Rate|Expected Readmission Rate|Number of Readmissions
+9n3s-kdb3,,READM-30-HF-HRRP,3055,07/01/2021,06/30/2024,512,739,Number of Discharges|Excess Readmission Ratio|Predicted Readmission Rate|Expected Readmission Rate|Number of Readmissions
+9n3s-kdb3,,READM-30-HIP-KNEE-HRRP,3055,07/01/2021,06/30/2024,1658,2802,Number of Discharges|Excess Readmission Ratio|Predicted Readmission Rate|Expected Readmission Rate|Number of Readmissions
+9n3s-kdb3,,READM-30-PN-HRRP,3055,07/01/2021,06/30/2024,423,735,Number of Discharges|Excess Readmission Ratio|Predicted Readmission Rate|Expected Readmission Rate|Number of Readmissions

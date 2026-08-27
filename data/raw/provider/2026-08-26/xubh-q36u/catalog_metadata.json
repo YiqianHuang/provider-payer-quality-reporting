@@ -1,0 +1,43 @@
+{
+  "@type": "dcat:Dataset",
+  "accessLevel": "public",
+  "bureauCode": [
+    "009:38"
+  ],
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Hospital Compare",
+    "hasURL": "https://cmsqualitysupport.servicenowservices.com/qnet_qa"
+  },
+  "description": "A list of all hospitals that have been registered with Medicare. The list includes addresses, phone numbers, hospital type, and overall hospital rating.",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "describedBy": "https://data.cms.gov/provider-data/sites/default/files/data_dictionaries/hospital/HOSPITAL_Data_Dictionary.pdf",
+      "describedByType": "application/pdf",
+      "downloadURL": "https://data.cms.gov/provider-data/sites/default/files/resources/893c372430d9d71a1c52737d01239d47_1785189955/Hospital_General_Information.csv",
+      "mediaType": "text/csv"
+    }
+  ],
+  "identifier": "xubh-q36u",
+  "issued": "2025-01-08",
+  "keyword": [
+    "General Information",
+    "Address",
+    "Overall Hospital Rating"
+  ],
+  "landingPage": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+  "modified": "2026-07-22",
+  "programCode": [
+    "009:000"
+  ],
+  "publisher": {
+    "@type": "org:Organization",
+    "name": "Centers for Medicare & Medicaid Services (CMS)"
+  },
+  "released": "2026-08-13",
+  "theme": [
+    "Hospitals"
+  ],
+  "title": "Hospital General Information"
+}

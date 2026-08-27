@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+*.tmp
+*.part
+tmp/
+**/.pbi/localSettings.json
+**/.pbi/cache.abf

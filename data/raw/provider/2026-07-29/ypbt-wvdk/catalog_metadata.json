@@ -1,0 +1,50 @@
+{
+  "@type": "dcat:Dataset",
+  "accessLevel": "public",
+  "bureauCode": [
+    "009:38"
+  ],
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Hospital Compare",
+    "hasURL": "https://cmsqualitysupport.servicenowservices.com/qnet_qa"
+  },
+  "description": "A list of hospitals participating in the FY 2026 Hospital VBP Program and their domain scores and Total Performance Scores.",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "describedBy": "https://data.cms.gov/provider-data/sites/default/files/data_dictionaries/hospital/HOSPITAL_Data_Dictionary.pdf",
+      "describedByType": "application/pdf",
+      "downloadURL": "https://data.cms.gov/provider-data/sites/default/files/resources/5551d4839c1dd75e3f7fe1310a1e2369_1770163628/hvbp_tps.csv",
+      "mediaType": "text/csv"
+    }
+  ],
+  "identifier": "ypbt-wvdk",
+  "issued": "2023-07-05",
+  "keyword": [
+    "Value Based Purchasing",
+    "Linking Quality to Payment",
+    "Total Performance Score",
+    "Achievement",
+    "Performance",
+    "Efficiency and Cost Reduction Domain",
+    "Efficiency",
+    "Clinical Outcomes",
+    "CAHPS",
+    "Patient Experience of Care"
+  ],
+  "landingPage": "https://data.cms.gov/provider-data/dataset/ypbt-wvdk",
+  "modified": "2026-01-26",
+  "programCode": [
+    "009:000"
+  ],
+  "publisher": {
+    "@type": "org:Organization",
+    "name": "Centers for Medicare & Medicaid Services (CMS)"
+  },
+  "released": "2026-05-13",
+  "theme": [
+    "Hospitals"
+  ],
+  "title": "Hospital Value-Based Purchasing (HVBP) - Total Performance Score"
+}

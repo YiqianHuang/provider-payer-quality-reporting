@@ -1,0 +1,13 @@
+[project]
+name = "provider-payer-quality-reporting"
+version = "0.1.0"
+description = "Reproducible public CMS provider and payer quality-reporting portfolio"
+requires-python = ">=3.11"
+dependencies = [
+  "pandas>=2.0,<3.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+

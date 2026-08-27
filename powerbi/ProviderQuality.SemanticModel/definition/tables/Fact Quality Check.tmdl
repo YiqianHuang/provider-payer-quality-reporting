@@ -1,0 +1,61 @@
+table 'Fact Quality Check'
+
+	measure 'Passed QA Checks' = CALCULATE(COUNTROWS('Fact Quality Check'), 'Fact Quality Check'[Status] = "PASS")
+		formatString: #,0
+
+	measure 'Failed QA Checks' = CALCULATE(COUNTROWS('Fact Quality Check'), 'Fact Quality Check'[Status] = "FAIL")
+		formatString: #,0
+
+	column 'Quality Check Key'
+		dataType: int64
+		isHidden
+		sourceColumn: quality_check_key
+
+	column Phase
+		dataType: string
+		sourceColumn: phase
+
+	column 'Table Name'
+		dataType: string
+		sourceColumn: table_name
+
+	column 'Check Name'
+		dataType: string
+		sourceColumn: check_name
+
+	column Status
+		dataType: string
+		sourceColumn: status
+
+	column Severity
+		dataType: string
+		sourceColumn: severity
+
+	column Details
+		dataType: string
+		sourceColumn: details
+
+	column 'Checked At'
+		dataType: dateTime
+		sourceColumn: checked_at
+
+	partition 'Fact Quality Check' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\10619\Documents\Projects\provider-payer-quality-reporting\data\processed\powerbi_import\fact_quality_check.csv"),
+				        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]
+				    ),
+				    PromotedHeaders = Table.PromoteHeaders(
+				        Source,
+				        [PromoteAllScalars=true]
+				    ),
+				    TypedColumns = Table.TransformColumnTypes(
+				        PromotedHeaders,
+				        {{"quality_check_key", Int64.Type}, {"phase", type text}, {"table_name", type text}, {"check_name", type text}, {"status", type text}, {"severity", type text}, {"details", type text}, {"checked_at", type datetime}},
+				        "en-US"
+				    )
+				in
+				    TypedColumns
+

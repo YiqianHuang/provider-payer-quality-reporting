@@ -1,0 +1,9 @@
+﻿reporting_period_key,period_role,measurement_start_date,measurement_end_date,fiscal_year,source_release_date,snapshot_date,period_label
+1,source_release_version,,,0,2026-08-13,2026-08-26,Catalog release 2026-08-13
+2,measurement,2022-01-01,2024-12-31,0,,2026-08-26,2022-01-01 to 2024-12-31
+3,measurement,2022-07-01,2025-06-30,0,,2026-08-26,2022-07-01 to 2025-06-30
+4,measurement,2023-07-01,2025-06-30,0,,2026-08-26,2023-07-01 to 2025-06-30
+5,measurement,2024-01-01,2024-12-31,0,,2026-08-26,2024-01-01 to 2024-12-31
+6,measurement,2024-07-01,2025-06-30,0,,2026-08-26,2024-07-01 to 2025-06-30
+7,measurement_and_fiscal_year,2021-07-01,2024-06-30,2026,,2026-08-26,FY 2026 HRRP; measurement 2021-07-01 to 2024-06-30
+8,fiscal_year,,,2026,,2026-08-26,FY 2026 HVBP

@@ -1,0 +1,80 @@
+table 'Dim Measure'
+
+	column 'Measure Key'
+		dataType: int64
+		isHidden
+		sourceColumn: measure_key
+
+	column 'Measure ID'
+		dataType: string
+		sourceColumn: measure_id
+
+	column 'Measure Name'
+		dataType: string
+		sourceColumn: measure_name
+
+	column 'Source Family'
+		dataType: string
+		sourceColumn: source_family
+
+	column Domain
+		dataType: string
+		sourceColumn: domain
+
+	column Unit
+		dataType: string
+		sourceColumn: unit
+
+	column Direction
+		dataType: string
+		sourceColumn: direction
+
+	column 'Official Status'
+		dataType: string
+		sourceColumn: official_or_project_defined
+
+	column 'Measurement Start Date'
+		dataType: dateTime
+		sourceColumn: measurement_start_date
+
+	column 'Measurement End Date'
+		dataType: dateTime
+		sourceColumn: measurement_end_date
+
+	column 'Fiscal Year'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: fiscal_year
+
+	column 'Suppression Rule'
+		dataType: string
+		sourceColumn: suppression_rule
+
+	column 'Business Interpretation'
+		dataType: string
+		sourceColumn: business_interpretation
+
+	column 'Interpretation Limit'
+		dataType: string
+		sourceColumn: interpretation_limit
+
+	partition 'Dim Measure' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\10619\Documents\Projects\provider-payer-quality-reporting\data\processed\powerbi_import\dim_measure.csv"),
+				        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]
+				    ),
+				    PromotedHeaders = Table.PromoteHeaders(
+				        Source,
+				        [PromoteAllScalars=true]
+				    ),
+				    TypedColumns = Table.TransformColumnTypes(
+				        PromotedHeaders,
+				        {{"measure_key", Int64.Type}, {"measure_id", type text}, {"measure_name", type text}, {"source_family", type text}, {"domain", type text}, {"unit", type text}, {"direction", type text}, {"official_or_project_defined", type text}, {"measurement_start_date", type date}, {"measurement_end_date", type date}, {"fiscal_year", Int64.Type}, {"suppression_rule", type text}, {"business_interpretation", type text}, {"interpretation_limit", type text}},
+				        "en-US"
+				    )
+				in
+				    TypedColumns
+

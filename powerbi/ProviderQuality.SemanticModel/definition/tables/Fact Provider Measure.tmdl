@@ -1,0 +1,126 @@
+table 'Fact Provider Measure'
+
+	measure 'Reportable Provider Results' = CALCULATE(COUNTROWS('Fact Provider Measure'), 'Fact Provider Measure'[Is Reportable] = TRUE())
+		formatString: #,0
+
+	measure 'Suppressed Provider Results' = CALCULATE(COUNTROWS('Fact Provider Measure'), 'Fact Provider Measure'[Is Suppressed] = TRUE())
+		formatString: #,0
+
+	measure 'Reportable Result Percent' = DIVIDE([Reportable Provider Results], COUNTROWS('Fact Provider Measure'))
+		formatString: 0.0%
+
+	measure 'Selected Provider Score' = IF(SELECTEDVALUE('Fact Provider Measure'[Is Reportable]) = TRUE(), SELECTEDVALUE('Fact Provider Measure'[Score]), BLANK())
+		formatString: 0.00
+
+	measure 'Direction Adjusted Gap' = VAR ProviderValue = [Selected Provider Score] VAR BenchmarkValue = [Selected National Benchmark] VAR Direction = SELECTEDVALUE('Dim Measure'[Direction]) RETURN IF(ISBLANK(ProviderValue) || ISBLANK(BenchmarkValue), BLANK(), SWITCH(Direction, "Lower is better", BenchmarkValue - ProviderValue, "Higher is better", ProviderValue - BenchmarkValue, BLANK()))
+		formatString: 0.00
+
+	measure 'Better Result Count' = CALCULATE(COUNTROWS('Fact Provider Measure'), 'Fact Provider Measure'[Comparison Category] IN {"Better than national rate", "Better than expected", "Fewer days than average"})
+		formatString: #,0
+
+	measure 'Same Result Count' = CALCULATE(COUNTROWS('Fact Provider Measure'), 'Fact Provider Measure'[Comparison Category] IN {"No different than national rate", "No different than expected", "Average days"})
+		formatString: #,0
+
+	measure 'Worse Result Count' = CALCULATE(COUNTROWS('Fact Provider Measure'), 'Fact Provider Measure'[Comparison Category] IN {"Worse than national rate", "Worse than expected", "More days than average"})
+		formatString: #,0
+
+	column 'Provider Measure Key'
+		dataType: int64
+		isHidden
+		sourceColumn: provider_measure_key
+
+	column 'Facility Key'
+		dataType: int64
+		isHidden
+		sourceColumn: facility_key
+
+	column 'Measure Key'
+		dataType: int64
+		isHidden
+		sourceColumn: measure_key
+
+	column 'Reporting Period Key'
+		dataType: int64
+		isHidden
+		sourceColumn: reporting_period_key
+
+	column 'Source Release Key'
+		dataType: int64
+		isHidden
+		sourceColumn: source_release_key
+
+	column 'Comparison Category'
+		dataType: string
+		sourceColumn: comparison_category
+
+	column Score
+		dataType: double
+		summarizeBy: none
+		sourceColumn: score_numeric
+
+	column 'Score Raw'
+		dataType: string
+		isHidden
+		sourceColumn: score_raw
+
+	column 'Lower Estimate'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: lower_estimate_numeric
+
+	column 'Upper Estimate'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: upper_estimate_numeric
+
+	column Denominator
+		dataType: double
+		summarizeBy: none
+		sourceColumn: denominator_numeric
+
+	column 'Patient Count'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: patient_count
+
+	column 'Patients Returned'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: patients_returned
+
+	column 'Footnote Code'
+		dataType: string
+		sourceColumn: footnote_code_raw
+
+	column 'Is Reportable'
+		dataType: boolean
+		sourceColumn: is_reportable
+
+	column 'Is Suppressed'
+		dataType: boolean
+		sourceColumn: is_suppressed
+
+	column 'Suppression Reason'
+		dataType: string
+		sourceColumn: suppression_reason
+
+	partition 'Fact Provider Measure' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\10619\Documents\Projects\provider-payer-quality-reporting\data\processed\powerbi_import\fact_provider_measure.csv"),
+				        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]
+				    ),
+				    PromotedHeaders = Table.PromoteHeaders(
+				        Source,
+				        [PromoteAllScalars=true]
+				    ),
+				    TypedColumns = Table.TransformColumnTypes(
+				        PromotedHeaders,
+				        {{"provider_measure_key", Int64.Type}, {"facility_key", Int64.Type}, {"measure_key", Int64.Type}, {"reporting_period_key", Int64.Type}, {"source_release_key", Int64.Type}, {"comparison_category", type text}, {"score_numeric", type number}, {"score_raw", type text}, {"lower_estimate_numeric", type number}, {"upper_estimate_numeric", type number}, {"denominator_numeric", type number}, {"patient_count", Int64.Type}, {"patients_returned", Int64.Type}, {"footnote_code_raw", type text}, {"is_reportable", type logical}, {"is_suppressed", type logical}, {"suppression_reason", type text}},
+				        "en-US"
+				    )
+				in
+				    TypedColumns
+

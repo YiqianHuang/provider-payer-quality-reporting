@@ -1,0 +1,76 @@
+relationship 'Geography to Facility'
+	fromColumn: 'Dim Facility'.'Geography Key'
+	toColumn: 'Dim Geography'.'Geography Key'
+
+relationship 'Facility to Provider Measure'
+	fromColumn: 'Fact Provider Measure'.'Facility Key'
+	toColumn: 'Dim Facility'.'Facility Key'
+
+relationship 'Facility to HRRP'
+	fromColumn: 'Fact HRRP'.'Facility Key'
+	toColumn: 'Dim Facility'.'Facility Key'
+
+relationship 'Facility to HVBP'
+	fromColumn: 'Fact HVBP'.'Facility Key'
+	toColumn: 'Dim Facility'.'Facility Key'
+
+relationship 'Geography to State Benchmark'
+	fromColumn: 'Fact State Benchmark'.'Geography Key'
+	toColumn: 'Dim Geography'.'Geography Key'
+
+relationship 'Measure to Provider Measure'
+	fromColumn: 'Fact Provider Measure'.'Measure Key'
+	toColumn: 'Dim Measure'.'Measure Key'
+
+relationship 'Measure to State Benchmark'
+	fromColumn: 'Fact State Benchmark'.'Measure Key'
+	toColumn: 'Dim Measure'.'Measure Key'
+
+relationship 'Measure to National Benchmark'
+	fromColumn: 'Fact National Benchmark'.'Measure Key'
+	toColumn: 'Dim Measure'.'Measure Key'
+
+relationship 'Measure to HRRP'
+	fromColumn: 'Fact HRRP'.'Measure Key'
+	toColumn: 'Dim Measure'.'Measure Key'
+
+relationship 'Period to Provider Measure'
+	fromColumn: 'Fact Provider Measure'.'Reporting Period Key'
+	toColumn: 'Dim Reporting Period'.'Reporting Period Key'
+
+relationship 'Period to State Benchmark'
+	fromColumn: 'Fact State Benchmark'.'Reporting Period Key'
+	toColumn: 'Dim Reporting Period'.'Reporting Period Key'
+
+relationship 'Period to National Benchmark'
+	fromColumn: 'Fact National Benchmark'.'Reporting Period Key'
+	toColumn: 'Dim Reporting Period'.'Reporting Period Key'
+
+relationship 'Period to HRRP'
+	fromColumn: 'Fact HRRP'.'Reporting Period Key'
+	toColumn: 'Dim Reporting Period'.'Reporting Period Key'
+
+relationship 'Period to HVBP'
+	fromColumn: 'Fact HVBP'.'Reporting Period Key'
+	toColumn: 'Dim Reporting Period'.'Reporting Period Key'
+
+relationship 'Release to Provider Measure'
+	fromColumn: 'Fact Provider Measure'.'Source Release Key'
+	toColumn: 'Dim Source Release'.'Source Release Key'
+
+relationship 'Release to State Benchmark'
+	fromColumn: 'Fact State Benchmark'.'Source Release Key'
+	toColumn: 'Dim Source Release'.'Source Release Key'
+
+relationship 'Release to National Benchmark'
+	fromColumn: 'Fact National Benchmark'.'Source Release Key'
+	toColumn: 'Dim Source Release'.'Source Release Key'
+
+relationship 'Release to HRRP'
+	fromColumn: 'Fact HRRP'.'Source Release Key'
+	toColumn: 'Dim Source Release'.'Source Release Key'
+
+relationship 'Release to HVBP'
+	fromColumn: 'Fact HVBP'.'Source Release Key'
+	toColumn: 'Dim Source Release'.'Source Release Key'
+

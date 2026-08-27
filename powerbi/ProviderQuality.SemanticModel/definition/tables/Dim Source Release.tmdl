@@ -1,0 +1,56 @@
+table 'Dim Source Release'
+
+	column 'Source Release Key'
+		dataType: int64
+		isHidden
+		sourceColumn: source_release_key
+
+	column 'Dataset ID'
+		dataType: string
+		sourceColumn: dataset_id
+
+	column 'Dataset Title'
+		dataType: string
+		sourceColumn: dataset_title
+
+	column 'Source Modified Date'
+		dataType: dateTime
+		sourceColumn: source_modified_date
+
+	column 'Source Release Date'
+		dataType: dateTime
+		sourceColumn: source_release_date
+
+	column 'Snapshot Date'
+		dataType: dateTime
+		sourceColumn: snapshot_date
+
+	column SHA-256
+		dataType: string
+		sourceColumn: sha256
+
+	column 'Source Row Count'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: row_count
+
+	partition 'Dim Source Release' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\10619\Documents\Projects\provider-payer-quality-reporting\data\processed\powerbi_import\dim_source_release.csv"),
+				        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]
+				    ),
+				    PromotedHeaders = Table.PromoteHeaders(
+				        Source,
+				        [PromoteAllScalars=true]
+				    ),
+				    TypedColumns = Table.TransformColumnTypes(
+				        PromotedHeaders,
+				        {{"source_release_key", Int64.Type}, {"dataset_id", type text}, {"dataset_title", type text}, {"source_modified_date", type date}, {"source_release_date", type date}, {"snapshot_date", type date}, {"sha256", type text}, {"row_count", Int64.Type}},
+				        "en-US"
+				    )
+				in
+				    TypedColumns
+

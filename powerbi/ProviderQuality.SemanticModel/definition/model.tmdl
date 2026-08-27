@@ -1,0 +1,17 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+
+ref table 'Dim Facility'
+ref table 'Dim Geography'
+ref table 'Dim Measure'
+ref table 'Dim Reporting Period'
+ref table 'Dim Source Release'
+ref table 'Fact Provider Measure'
+ref table 'Fact State Benchmark'
+ref table 'Fact National Benchmark'
+ref table 'Fact HRRP'
+ref table 'Fact HVBP'
+ref table 'Fact Quality Check'
+

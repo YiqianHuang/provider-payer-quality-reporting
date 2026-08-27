@@ -1,0 +1,242 @@
+{
+  "model_name": "Provider Quality Performance",
+  "model_version": "0.1.0",
+  "snapshot_date": "2026-08-26",
+  "storage_mode": "Import",
+  "source_database": "data/processed/provider_quality.sqlite",
+  "tables": [
+    {
+      "name": "Dim Facility",
+      "source_object": "dim_facility",
+      "kind": "dimension",
+      "columns": [
+        {"name": "Facility Key", "source": "facility_key", "data_type": "Int64", "hidden": true},
+        {"name": "Facility ID", "source": "facility_id", "data_type": "Text", "summarize_by": "None"},
+        {"name": "Facility Name", "source": "facility_name", "data_type": "Text"},
+        {"name": "State Code", "source": "state_code", "data_type": "Text"},
+        {"name": "Hospital Type", "source": "hospital_type", "data_type": "Text"},
+        {"name": "Hospital Ownership", "source": "hospital_ownership", "data_type": "Text"},
+        {"name": "Current General Info Match", "source": "is_current_general_info_match", "data_type": "Boolean"},
+        {"name": "Alternate Federal ID", "source": "is_alternate_federal_id", "data_type": "Boolean"},
+        {"name": "Overall Rating", "source": "overall_rating_numeric", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Overall Rating Raw", "source": "overall_rating_raw", "data_type": "Text", "hidden": true},
+        {"name": "Overall Rating Footnote", "source": "overall_rating_footnote_code", "data_type": "Text"},
+        {"name": "Geography Key", "source": "geography_key", "data_type": "Int64", "hidden": true}
+      ]
+    },
+    {
+      "name": "Dim Geography",
+      "source_object": "dim_geography",
+      "kind": "dimension",
+      "columns": [
+        {"name": "Geography Key", "source": "geography_key", "data_type": "Int64", "hidden": true},
+        {"name": "Geography Type", "source": "geography_type", "data_type": "Text"},
+        {"name": "State Code", "source": "state_code", "data_type": "Text"},
+        {"name": "Geography Name", "source": "geography_name", "data_type": "Text"}
+      ]
+    },
+    {
+      "name": "Dim Measure",
+      "source_object": "dim_measure",
+      "kind": "dimension",
+      "columns": [
+        {"name": "Measure Key", "source": "measure_key", "data_type": "Int64", "hidden": true},
+        {"name": "Measure ID", "source": "measure_id", "data_type": "Text"},
+        {"name": "Measure Name", "source": "measure_name", "data_type": "Text"},
+        {"name": "Source Family", "source": "source_family", "data_type": "Text"},
+        {"name": "Domain", "source": "domain", "data_type": "Text"},
+        {"name": "Unit", "source": "unit", "data_type": "Text"},
+        {"name": "Direction", "source": "direction", "data_type": "Text"},
+        {"name": "Official Status", "source": "official_or_project_defined", "data_type": "Text"},
+        {"name": "Measurement Start Date", "source": "measurement_start_date", "data_type": "Date"},
+        {"name": "Measurement End Date", "source": "measurement_end_date", "data_type": "Date"},
+        {"name": "Fiscal Year", "source": "fiscal_year", "data_type": "Int64", "summarize_by": "None"},
+        {"name": "Suppression Rule", "source": "suppression_rule", "data_type": "Text"},
+        {"name": "Business Interpretation", "source": "business_interpretation", "data_type": "Text"},
+        {"name": "Interpretation Limit", "source": "interpretation_limit", "data_type": "Text"}
+      ]
+    },
+    {
+      "name": "Dim Reporting Period",
+      "source_object": "dim_reporting_period",
+      "kind": "dimension",
+      "columns": [
+        {"name": "Reporting Period Key", "source": "reporting_period_key", "data_type": "Int64", "hidden": true},
+        {"name": "Period Role", "source": "period_role", "data_type": "Text"},
+        {"name": "Measurement Start Date", "source": "measurement_start_date", "data_type": "Date"},
+        {"name": "Measurement End Date", "source": "measurement_end_date", "data_type": "Date"},
+        {"name": "Fiscal Year", "source": "fiscal_year", "data_type": "Int64", "summarize_by": "None"},
+        {"name": "Source Release Date", "source": "source_release_date", "data_type": "Date"},
+        {"name": "Snapshot Date", "source": "snapshot_date", "data_type": "Date"},
+        {"name": "Period Label", "source": "period_label", "data_type": "Text"}
+      ]
+    },
+    {
+      "name": "Dim Source Release",
+      "source_object": "dim_source_release",
+      "kind": "dimension",
+      "columns": [
+        {"name": "Source Release Key", "source": "source_release_key", "data_type": "Int64", "hidden": true},
+        {"name": "Dataset ID", "source": "dataset_id", "data_type": "Text"},
+        {"name": "Dataset Title", "source": "dataset_title", "data_type": "Text"},
+        {"name": "Source Modified Date", "source": "source_modified_date", "data_type": "Date"},
+        {"name": "Source Release Date", "source": "source_release_date", "data_type": "Date"},
+        {"name": "Snapshot Date", "source": "snapshot_date", "data_type": "Date"},
+        {"name": "SHA-256", "source": "sha256", "data_type": "Text"},
+        {"name": "Source Row Count", "source": "row_count", "data_type": "Int64", "summarize_by": "None"}
+      ]
+    },
+    {
+      "name": "Fact Provider Measure",
+      "source_object": "fact_provider_measure",
+      "kind": "fact",
+      "columns": [
+        {"name": "Provider Measure Key", "source": "provider_measure_key", "data_type": "Int64", "hidden": true},
+        {"name": "Facility Key", "source": "facility_key", "data_type": "Int64", "hidden": true},
+        {"name": "Measure Key", "source": "measure_key", "data_type": "Int64", "hidden": true},
+        {"name": "Reporting Period Key", "source": "reporting_period_key", "data_type": "Int64", "hidden": true},
+        {"name": "Source Release Key", "source": "source_release_key", "data_type": "Int64", "hidden": true},
+        {"name": "Comparison Category", "source": "comparison_category", "data_type": "Text"},
+        {"name": "Score", "source": "score_numeric", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Score Raw", "source": "score_raw", "data_type": "Text", "hidden": true},
+        {"name": "Lower Estimate", "source": "lower_estimate_numeric", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Upper Estimate", "source": "upper_estimate_numeric", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Denominator", "source": "denominator_numeric", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Patient Count", "source": "patient_count", "data_type": "Int64", "summarize_by": "None"},
+        {"name": "Patients Returned", "source": "patients_returned", "data_type": "Int64", "summarize_by": "None"},
+        {"name": "Footnote Code", "source": "footnote_code_raw", "data_type": "Text"},
+        {"name": "Is Reportable", "source": "is_reportable", "data_type": "Boolean"},
+        {"name": "Is Suppressed", "source": "is_suppressed", "data_type": "Boolean"},
+        {"name": "Suppression Reason", "source": "suppression_reason", "data_type": "Text"}
+      ]
+    },
+    {
+      "name": "Fact State Benchmark",
+      "source_object": "fact_provider_state_benchmark",
+      "kind": "fact",
+      "columns": [
+        {"name": "State Benchmark Key", "source": "state_benchmark_key", "data_type": "Int64", "hidden": true},
+        {"name": "Geography Key", "source": "geography_key", "data_type": "Int64", "hidden": true},
+        {"name": "Measure Key", "source": "measure_key", "data_type": "Int64", "hidden": true},
+        {"name": "Reporting Period Key", "source": "reporting_period_key", "data_type": "Int64", "hidden": true},
+        {"name": "Source Release Key", "source": "source_release_key", "data_type": "Int64", "hidden": true},
+        {"name": "Hospitals Worse", "source": "hospitals_worse", "data_type": "Int64", "summarize_by": "Sum"},
+        {"name": "Hospitals Same", "source": "hospitals_same", "data_type": "Int64", "summarize_by": "Sum"},
+        {"name": "Hospitals Better", "source": "hospitals_better", "data_type": "Int64", "summarize_by": "Sum"},
+        {"name": "Hospitals Too Few", "source": "hospitals_too_few", "data_type": "Int64", "summarize_by": "Sum"},
+        {"name": "Footnote Code", "source": "footnote_code_raw", "data_type": "Text"}
+      ]
+    },
+    {
+      "name": "Fact National Benchmark",
+      "source_object": "fact_provider_national_benchmark",
+      "kind": "fact",
+      "columns": [
+        {"name": "National Benchmark Key", "source": "national_benchmark_key", "data_type": "Int64", "hidden": true},
+        {"name": "Measure Key", "source": "measure_key", "data_type": "Int64", "hidden": true},
+        {"name": "Reporting Period Key", "source": "reporting_period_key", "data_type": "Int64", "hidden": true},
+        {"name": "Source Release Key", "source": "source_release_key", "data_type": "Int64", "hidden": true},
+        {"name": "National Rate", "source": "national_rate_numeric", "data_type": "Double", "summarize_by": "None"},
+        {"name": "National Rate Raw", "source": "national_rate_raw", "data_type": "Text"},
+        {"name": "Footnote Code", "source": "footnote_code_raw", "data_type": "Text"}
+      ]
+    },
+    {
+      "name": "Fact HRRP",
+      "source_object": "fact_provider_hrrp_measure",
+      "kind": "fact",
+      "columns": [
+        {"name": "Provider HRRP Key", "source": "provider_hrrp_key", "data_type": "Int64", "hidden": true},
+        {"name": "Facility Key", "source": "facility_key", "data_type": "Int64", "hidden": true},
+        {"name": "Measure Key", "source": "measure_key", "data_type": "Int64", "hidden": true},
+        {"name": "Reporting Period Key", "source": "reporting_period_key", "data_type": "Int64", "hidden": true},
+        {"name": "Source Release Key", "source": "source_release_key", "data_type": "Int64", "hidden": true},
+        {"name": "Excess Readmission Ratio", "source": "excess_readmission_ratio", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Predicted Readmission Rate", "source": "predicted_readmission_rate", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Expected Readmission Rate", "source": "expected_readmission_rate", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Discharge Count", "source": "discharge_count", "data_type": "Int64", "summarize_by": "None"},
+        {"name": "Readmission Count", "source": "readmission_count", "data_type": "Int64", "summarize_by": "None"},
+        {"name": "Footnote Code", "source": "footnote_code_raw", "data_type": "Text"},
+        {"name": "Is Reportable", "source": "is_reportable", "data_type": "Boolean"},
+        {"name": "Is Suppressed", "source": "is_suppressed", "data_type": "Boolean"},
+        {"name": "Suppression Reason", "source": "suppression_reason", "data_type": "Text"}
+      ]
+    },
+    {
+      "name": "Fact HVBP",
+      "source_object": "fact_provider_program_score",
+      "kind": "fact",
+      "columns": [
+        {"name": "Provider Program Score Key", "source": "provider_program_score_key", "data_type": "Int64", "hidden": true},
+        {"name": "Facility Key", "source": "facility_key", "data_type": "Int64", "hidden": true},
+        {"name": "Reporting Period Key", "source": "reporting_period_key", "data_type": "Int64", "hidden": true},
+        {"name": "Source Release Key", "source": "source_release_key", "data_type": "Int64", "hidden": true},
+        {"name": "Fiscal Year", "source": "fiscal_year", "data_type": "Int64", "summarize_by": "None"},
+        {"name": "Clinical Outcomes Unweighted", "source": "clinical_outcomes_unweighted", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Clinical Outcomes Weighted", "source": "clinical_outcomes_weighted", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Engagement Unweighted", "source": "engagement_unweighted", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Engagement Weighted", "source": "engagement_weighted", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Safety Unweighted", "source": "safety_unweighted", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Safety Weighted", "source": "safety_weighted", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Efficiency Unweighted", "source": "efficiency_unweighted", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Efficiency Weighted", "source": "efficiency_weighted", "data_type": "Double", "summarize_by": "None"},
+        {"name": "Total Performance Score", "source": "total_performance_score", "data_type": "Double", "summarize_by": "None"},
+        {"name": "TPS Reportable", "source": "is_tps_reportable", "data_type": "Boolean"},
+        {"name": "Suppression Reason", "source": "suppression_reason", "data_type": "Text"}
+      ]
+    },
+    {
+      "name": "Fact Quality Check",
+      "source_object": "fact_quality_check",
+      "kind": "fact",
+      "columns": [
+        {"name": "Quality Check Key", "source": "quality_check_key", "data_type": "Int64", "hidden": true},
+        {"name": "Phase", "source": "phase", "data_type": "Text"},
+        {"name": "Table Name", "source": "table_name", "data_type": "Text"},
+        {"name": "Check Name", "source": "check_name", "data_type": "Text"},
+        {"name": "Status", "source": "status", "data_type": "Text"},
+        {"name": "Severity", "source": "severity", "data_type": "Text"},
+        {"name": "Details", "source": "details", "data_type": "Text"},
+        {"name": "Checked At", "source": "checked_at", "data_type": "DateTime"}
+      ]
+    }
+  ],
+  "relationships": [
+    {"name": "Geography to Facility", "from_table": "Dim Geography", "from_column": "Geography Key", "to_table": "Dim Facility", "to_column": "Geography Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Facility to Provider Measure", "from_table": "Dim Facility", "from_column": "Facility Key", "to_table": "Fact Provider Measure", "to_column": "Facility Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Facility to HRRP", "from_table": "Dim Facility", "from_column": "Facility Key", "to_table": "Fact HRRP", "to_column": "Facility Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Facility to HVBP", "from_table": "Dim Facility", "from_column": "Facility Key", "to_table": "Fact HVBP", "to_column": "Facility Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Geography to State Benchmark", "from_table": "Dim Geography", "from_column": "Geography Key", "to_table": "Fact State Benchmark", "to_column": "Geography Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Measure to Provider Measure", "from_table": "Dim Measure", "from_column": "Measure Key", "to_table": "Fact Provider Measure", "to_column": "Measure Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Measure to State Benchmark", "from_table": "Dim Measure", "from_column": "Measure Key", "to_table": "Fact State Benchmark", "to_column": "Measure Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Measure to National Benchmark", "from_table": "Dim Measure", "from_column": "Measure Key", "to_table": "Fact National Benchmark", "to_column": "Measure Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Measure to HRRP", "from_table": "Dim Measure", "from_column": "Measure Key", "to_table": "Fact HRRP", "to_column": "Measure Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Period to Provider Measure", "from_table": "Dim Reporting Period", "from_column": "Reporting Period Key", "to_table": "Fact Provider Measure", "to_column": "Reporting Period Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Period to State Benchmark", "from_table": "Dim Reporting Period", "from_column": "Reporting Period Key", "to_table": "Fact State Benchmark", "to_column": "Reporting Period Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Period to National Benchmark", "from_table": "Dim Reporting Period", "from_column": "Reporting Period Key", "to_table": "Fact National Benchmark", "to_column": "Reporting Period Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Period to HRRP", "from_table": "Dim Reporting Period", "from_column": "Reporting Period Key", "to_table": "Fact HRRP", "to_column": "Reporting Period Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Period to HVBP", "from_table": "Dim Reporting Period", "from_column": "Reporting Period Key", "to_table": "Fact HVBP", "to_column": "Reporting Period Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Release to Provider Measure", "from_table": "Dim Source Release", "from_column": "Source Release Key", "to_table": "Fact Provider Measure", "to_column": "Source Release Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Release to State Benchmark", "from_table": "Dim Source Release", "from_column": "Source Release Key", "to_table": "Fact State Benchmark", "to_column": "Source Release Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Release to National Benchmark", "from_table": "Dim Source Release", "from_column": "Source Release Key", "to_table": "Fact National Benchmark", "to_column": "Source Release Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Release to HRRP", "from_table": "Dim Source Release", "from_column": "Source Release Key", "to_table": "Fact HRRP", "to_column": "Source Release Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true},
+    {"name": "Release to HVBP", "from_table": "Dim Source Release", "from_column": "Source Release Key", "to_table": "Fact HVBP", "to_column": "Source Release Key", "cardinality": "OneToMany", "cross_filter": "Single", "active": true}
+  ],
+  "measures": [
+    {"name": "Facility Count", "home_table": "Dim Facility", "format_string": "#,0", "expression": "DISTINCTCOUNT('Dim Facility'[Facility ID])"},
+    {"name": "Reportable Provider Results", "home_table": "Fact Provider Measure", "format_string": "#,0", "expression": "CALCULATE(COUNTROWS('Fact Provider Measure'), 'Fact Provider Measure'[Is Reportable] = TRUE())"},
+    {"name": "Suppressed Provider Results", "home_table": "Fact Provider Measure", "format_string": "#,0", "expression": "CALCULATE(COUNTROWS('Fact Provider Measure'), 'Fact Provider Measure'[Is Suppressed] = TRUE())"},
+    {"name": "Reportable Result Percent", "home_table": "Fact Provider Measure", "format_string": "0.0%", "expression": "DIVIDE([Reportable Provider Results], COUNTROWS('Fact Provider Measure'))"},
+    {"name": "Selected Provider Score", "home_table": "Fact Provider Measure", "format_string": "0.00", "expression": "IF(SELECTEDVALUE('Fact Provider Measure'[Is Reportable]) = TRUE(), SELECTEDVALUE('Fact Provider Measure'[Score]), BLANK())"},
+    {"name": "Selected National Benchmark", "home_table": "Fact National Benchmark", "format_string": "0.00", "expression": "SELECTEDVALUE('Fact National Benchmark'[National Rate])"},
+    {"name": "Direction Adjusted Gap", "home_table": "Fact Provider Measure", "format_string": "0.00", "expression": "VAR ProviderValue = [Selected Provider Score] VAR BenchmarkValue = [Selected National Benchmark] VAR Direction = SELECTEDVALUE('Dim Measure'[Direction]) RETURN IF(ISBLANK(ProviderValue) || ISBLANK(BenchmarkValue), BLANK(), SWITCH(Direction, \"Lower is better\", BenchmarkValue - ProviderValue, \"Higher is better\", ProviderValue - BenchmarkValue, BLANK()))"},
+    {"name": "Better Result Count", "home_table": "Fact Provider Measure", "format_string": "#,0", "expression": "CALCULATE(COUNTROWS('Fact Provider Measure'), 'Fact Provider Measure'[Comparison Category] IN {\"Better than national rate\", \"Better than expected\", \"Fewer days than average\"})"},
+    {"name": "Same Result Count", "home_table": "Fact Provider Measure", "format_string": "#,0", "expression": "CALCULATE(COUNTROWS('Fact Provider Measure'), 'Fact Provider Measure'[Comparison Category] IN {\"No different than national rate\", \"No different than expected\", \"Average days\"})"},
+    {"name": "Worse Result Count", "home_table": "Fact Provider Measure", "format_string": "#,0", "expression": "CALCULATE(COUNTROWS('Fact Provider Measure'), 'Fact Provider Measure'[Comparison Category] IN {\"Worse than national rate\", \"Worse than expected\", \"More days than average\"})"},
+    {"name": "Selected HRRP Excess Ratio", "home_table": "Fact HRRP", "format_string": "0.0000", "expression": "IF(SELECTEDVALUE('Fact HRRP'[Is Reportable]) = TRUE(), SELECTEDVALUE('Fact HRRP'[Excess Readmission Ratio]), BLANK())"},
+    {"name": "HRRP Above Expected Count", "home_table": "Fact HRRP", "format_string": "#,0", "expression": "CALCULATE(COUNTROWS('Fact HRRP'), 'Fact HRRP'[Is Reportable] = TRUE(), 'Fact HRRP'[Excess Readmission Ratio] > 1)"},
+    {"name": "Selected HVBP TPS", "home_table": "Fact HVBP", "format_string": "0.00", "expression": "IF(SELECTEDVALUE('Fact HVBP'[TPS Reportable]) = TRUE(), SELECTEDVALUE('Fact HVBP'[Total Performance Score]), BLANK())"},
+    {"name": "Passed QA Checks", "home_table": "Fact Quality Check", "format_string": "#,0", "expression": "CALCULATE(COUNTROWS('Fact Quality Check'), 'Fact Quality Check'[Status] = \"PASS\")"},
+    {"name": "Failed QA Checks", "home_table": "Fact Quality Check", "format_string": "#,0", "expression": "CALCULATE(COUNTROWS('Fact Quality Check'), 'Fact Quality Check'[Status] = \"FAIL\")"}
+  ]
+}

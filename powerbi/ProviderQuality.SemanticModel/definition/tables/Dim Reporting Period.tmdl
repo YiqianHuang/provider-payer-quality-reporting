@@ -1,0 +1,56 @@
+table 'Dim Reporting Period'
+
+	column 'Reporting Period Key'
+		dataType: int64
+		isHidden
+		sourceColumn: reporting_period_key
+
+	column 'Period Role'
+		dataType: string
+		sourceColumn: period_role
+
+	column 'Measurement Start Date'
+		dataType: dateTime
+		sourceColumn: measurement_start_date
+
+	column 'Measurement End Date'
+		dataType: dateTime
+		sourceColumn: measurement_end_date
+
+	column 'Fiscal Year'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: fiscal_year
+
+	column 'Source Release Date'
+		dataType: dateTime
+		sourceColumn: source_release_date
+
+	column 'Snapshot Date'
+		dataType: dateTime
+		sourceColumn: snapshot_date
+
+	column 'Period Label'
+		dataType: string
+		sourceColumn: period_label
+
+	partition 'Dim Reporting Period' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\10619\Documents\Projects\provider-payer-quality-reporting\data\processed\powerbi_import\dim_reporting_period.csv"),
+				        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]
+				    ),
+				    PromotedHeaders = Table.PromoteHeaders(
+				        Source,
+				        [PromoteAllScalars=true]
+				    ),
+				    TypedColumns = Table.TransformColumnTypes(
+				        PromotedHeaders,
+				        {{"reporting_period_key", Int64.Type}, {"period_role", type text}, {"measurement_start_date", type date}, {"measurement_end_date", type date}, {"fiscal_year", Int64.Type}, {"source_release_date", type date}, {"snapshot_date", type date}, {"period_label", type text}},
+				        "en-US"
+				    )
+				in
+				    TypedColumns
+

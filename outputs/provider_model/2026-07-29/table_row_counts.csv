@@ -1,0 +1,12 @@
+﻿table_name,row_count
+dim_facility,5443
+dim_geography,56
+dim_measure,29
+dim_reporting_period,7
+dim_source_release,6
+fact_provider_hrrp_measure,18330
+fact_provider_measure,67088
+fact_provider_national_benchmark,14
+fact_provider_program_score,2455
+fact_provider_state_benchmark,784
+fact_quality_check,115

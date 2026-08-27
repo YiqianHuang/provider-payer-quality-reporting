@@ -1,0 +1,94 @@
+table 'Fact HRRP'
+
+	measure 'Selected HRRP Excess Ratio' = IF(SELECTEDVALUE('Fact HRRP'[Is Reportable]) = TRUE(), SELECTEDVALUE('Fact HRRP'[Excess Readmission Ratio]), BLANK())
+		formatString: 0.0000
+
+	measure 'HRRP Above Expected Count' = CALCULATE(COUNTROWS('Fact HRRP'), 'Fact HRRP'[Is Reportable] = TRUE(), 'Fact HRRP'[Excess Readmission Ratio] > 1)
+		formatString: #,0
+
+	column 'Provider HRRP Key'
+		dataType: int64
+		isHidden
+		sourceColumn: provider_hrrp_key
+
+	column 'Facility Key'
+		dataType: int64
+		isHidden
+		sourceColumn: facility_key
+
+	column 'Measure Key'
+		dataType: int64
+		isHidden
+		sourceColumn: measure_key
+
+	column 'Reporting Period Key'
+		dataType: int64
+		isHidden
+		sourceColumn: reporting_period_key
+
+	column 'Source Release Key'
+		dataType: int64
+		isHidden
+		sourceColumn: source_release_key
+
+	column 'Excess Readmission Ratio'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: excess_readmission_ratio
+
+	column 'Predicted Readmission Rate'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: predicted_readmission_rate
+
+	column 'Expected Readmission Rate'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: expected_readmission_rate
+
+	column 'Discharge Count'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: discharge_count
+
+	column 'Readmission Count'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: readmission_count
+
+	column 'Footnote Code'
+		dataType: string
+		sourceColumn: footnote_code_raw
+
+	column 'Is Reportable'
+		dataType: boolean
+		sourceColumn: is_reportable
+
+	column 'Is Suppressed'
+		dataType: boolean
+		sourceColumn: is_suppressed
+
+	column 'Suppression Reason'
+		dataType: string
+		sourceColumn: suppression_reason
+
+	partition 'Fact HRRP' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\10619\Documents\Projects\provider-payer-quality-reporting\data\processed\powerbi_import\fact_provider_hrrp_measure.csv"),
+				        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]
+				    ),
+				    PromotedHeaders = Table.PromoteHeaders(
+				        Source,
+				        [PromoteAllScalars=true]
+				    ),
+				    TypedColumns = Table.TransformColumnTypes(
+				        PromotedHeaders,
+				        {{"provider_hrrp_key", Int64.Type}, {"facility_key", Int64.Type}, {"measure_key", Int64.Type}, {"reporting_period_key", Int64.Type}, {"source_release_key", Int64.Type}, {"excess_readmission_ratio", type number}, {"predicted_readmission_rate", type number}, {"expected_readmission_rate", type number}, {"discharge_count", Int64.Type}, {"readmission_count", Int64.Type}, {"footnote_code_raw", type text}, {"is_reportable", type logical}, {"is_suppressed", type logical}, {"suppression_reason", type text}},
+				        "en-US"
+				    )
+				in
+				    TypedColumns
+

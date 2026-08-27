@@ -1,0 +1,753 @@
+{
+  "checks": [
+    {
+      "check": "unique_table_names",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "All semantic table names are unique.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "source_columns_Dim Facility",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Source object dim_facility; missing columns: []",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "source_columns_Dim Geography",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Source object dim_geography; missing columns: []",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "source_columns_Dim Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Source object dim_measure; missing columns: []",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "source_columns_Dim Reporting Period",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Source object dim_reporting_period; missing columns: []",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "source_columns_Dim Source Release",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Source object dim_source_release; missing columns: []",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "source_columns_Fact Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Source object fact_provider_measure; missing columns: []",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "source_columns_Fact State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Source object fact_provider_state_benchmark; missing columns: []",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "source_columns_Fact National Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Source object fact_provider_national_benchmark; missing columns: []",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "source_columns_Fact HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Source object fact_provider_hrrp_measure; missing columns: []",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "source_columns_Fact HVBP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Source object fact_provider_program_score; missing columns: []",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "source_columns_Fact Quality Check",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Source object fact_quality_check; missing columns: []",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Geography to Facility",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Geography to Facility",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Geography to Facility",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Geography to Facility",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=56; distinct keys=56.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Facility to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Facility to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Facility to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Facility to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=5440; distinct keys=5440.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Facility to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Facility to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Facility to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Facility to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=5440; distinct keys=5440.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Facility to HVBP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Facility to HVBP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Facility to HVBP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Facility to HVBP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=5440; distinct keys=5440.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Geography to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Geography to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Geography to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Geography to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=56; distinct keys=56.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Measure to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Measure to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Measure to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Measure to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=29; distinct keys=29.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Measure to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Measure to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Measure to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Measure to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=29; distinct keys=29.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Measure to National Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Measure to National Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Measure to National Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Measure to National Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=29; distinct keys=29.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Measure to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Measure to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Measure to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Measure to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=29; distinct keys=29.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Period to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Period to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Period to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Period to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=8; distinct keys=8.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Period to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Period to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Period to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Period to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=8; distinct keys=8.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Period to National Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Period to National Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Period to National Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Period to National Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=8; distinct keys=8.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Period to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Period to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Period to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Period to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=8; distinct keys=8.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Period to HVBP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Period to HVBP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Period to HVBP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Period to HVBP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=8; distinct keys=8.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Release to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Release to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Release to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Release to Provider Measure",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=6; distinct keys=6.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Release to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Release to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Release to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Release to State Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=6; distinct keys=6.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Release to National Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Release to National Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Release to National Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Release to National Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=6; distinct keys=6.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Release to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Release to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Release to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Release to HRRP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=6; distinct keys=6.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "relationship_references_Release to HVBP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship table and column references resolve.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_fact_to_fact_Release to HVBP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship is dimension-to-dimension or dimension-to-fact.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "single_direction_Release to HVBP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Relationship uses single-direction filtering.",
+      "severity": "High",
+      "status": "PASS"
+    },
+    {
+      "check": "one_side_unique_Release to HVBP",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "One-side rows=6; distinct keys=6.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "unique_measure_names",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Measure count: 15.",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "dax_references_Facility Count",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Home table=Dim Facility; unresolved=[].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "dax_references_Reportable Provider Results",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Home table=Fact Provider Measure; unresolved=[].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "dax_references_Suppressed Provider Results",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Home table=Fact Provider Measure; unresolved=[].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "dax_references_Reportable Result Percent",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Home table=Fact Provider Measure; unresolved=[].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "dax_references_Selected Provider Score",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Home table=Fact Provider Measure; unresolved=[].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "dax_references_Selected National Benchmark",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Home table=Fact National Benchmark; unresolved=[].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "dax_references_Direction Adjusted Gap",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Home table=Fact Provider Measure; unresolved=[].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "dax_references_Better Result Count",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Home table=Fact Provider Measure; unresolved=[].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "dax_references_Same Result Count",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Home table=Fact Provider Measure; unresolved=[].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "dax_references_Worse Result Count",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Home table=Fact Provider Measure; unresolved=[].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "dax_references_Selected HRRP Excess Ratio",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Home table=Fact HRRP; unresolved=[].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "dax_references_HRRP Above Expected Count",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Home table=Fact HRRP; unresolved=[].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "dax_references_Selected HVBP TPS",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Home table=Fact HVBP; unresolved=[].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "dax_references_Passed QA Checks",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Home table=Fact Quality Check; unresolved=[].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "dax_references_Failed QA Checks",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Home table=Fact Quality Check; unresolved=[].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "double_fact_fields_disable_implicit_sum",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Unsafe fields: [].",
+      "severity": "Critical",
+      "status": "PASS"
+    },
+    {
+      "check": "no_active_release_to_facility_path",
+      "checked_at": "2026-08-26T23:57:43+00:00",
+      "details": "Facility and program facts may originate from different dataset releases; an active release-to-facility relationship would create misleading filtering.",
+      "severity": "High",
+      "status": "PASS"
+    }
+  ],
+  "database_path": "data/processed/provider_quality.sqlite",
+  "model_name": "Provider Quality Performance",
+  "model_version": "0.1.0",
+  "spec_path": "powerbi/semantic_model.json",
+  "status_counts": {
+    "PASS": 106
+  }
+}

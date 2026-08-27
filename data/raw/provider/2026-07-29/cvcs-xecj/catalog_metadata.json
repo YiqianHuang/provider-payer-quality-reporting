@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "accessLevel": "public",
+  "bureauCode": [
+    "009:38"
+  ],
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Hospital Compare",
+    "hasURL": "https://cmsqualitysupport.servicenowservices.com/qnet_qa"
+  },
+  "description": "Unplanned Hospital Visits: national data. This data set includes national-level data for the hospital return days (or excess days in acute care [EDAC]) measures, the unplanned readmissions measures, and measures of unplanned hospital visits after outpatient procedures.",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "describedBy": "https://data.cms.gov/provider-data/sites/default/files/data_dictionaries/hospital/HOSPITAL_Data_Dictionary.pdf",
+      "describedByType": "application/pdf",
+      "downloadURL": "https://data.cms.gov/provider-data/sites/default/files/resources/d30b0557f1d06bee1d5646d2eaede709_1776974864/Unplanned_Hospital_Visits-National.csv",
+      "mediaType": "text/csv"
+    }
+  ],
+  "identifier": "cvcs-xecj",
+  "issued": "2020-12-10",
+  "keyword": [
+    "Unplanned Hospital Visits",
+    "Readmissions",
+    "Excess Days in Acute Care",
+    "National",
+    "Outpatient Surgery",
+    "Outpatient",
+    "Pneumonia",
+    "Acute Myocardial Infarction",
+    "Heart Failure",
+    "Chronic Obstructive Pulmonary Disease",
+    "Coronary Artery Bypass Graft",
+    "Colonoscopy",
+    "Total Hip and/or Total Knee Arthroplasty"
+  ],
+  "landingPage": "https://data.cms.gov/provider-data/dataset/cvcs-xecj",
+  "modified": "2026-04-21",
+  "programCode": [
+    "009:000"
+  ],
+  "publisher": {
+    "@type": "org:Organization",
+    "name": "Centers for Medicare & Medicaid Services (CMS)"
+  },
+  "released": "2026-05-13",
+  "theme": [
+    "Hospitals"
+  ],
+  "title": "Unplanned Hospital Visits - National"
+}

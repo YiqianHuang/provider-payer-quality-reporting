@@ -1,0 +1,107 @@
+{
+  "exports": [
+    {
+      "column_count": 12,
+      "file_size_bytes": 644091,
+      "path": "data/processed/powerbi_import/dim_facility.csv",
+      "row_count": 5440,
+      "semantic_table": "Dim Facility",
+      "sha256": "4437857f1529cf26e660e5f3b4d9264a9b2cc548d4b77ca0155d4bf88a54ada2",
+      "source_object": "dim_facility"
+    },
+    {
+      "column_count": 4,
+      "file_size_bytes": 889,
+      "path": "data/processed/powerbi_import/dim_geography.csv",
+      "row_count": 56,
+      "semantic_table": "Dim Geography",
+      "sha256": "f13385dadd6463fdef7d482b77f8c2fb9b6c43827531bd1511a9511a25f16903",
+      "source_object": "dim_geography"
+    },
+    {
+      "column_count": 14,
+      "file_size_bytes": 15598,
+      "path": "data/processed/powerbi_import/dim_measure.csv",
+      "row_count": 29,
+      "semantic_table": "Dim Measure",
+      "sha256": "78bf77996ac7394d307c6ff8685a06ca9ffb6f0afb47e9b66cfdfa668be150d9",
+      "source_object": "dim_measure"
+    },
+    {
+      "column_count": 8,
+      "file_size_bytes": 758,
+      "path": "data/processed/powerbi_import/dim_reporting_period.csv",
+      "row_count": 8,
+      "semantic_table": "Dim Reporting Period",
+      "sha256": "d2fc5063d64bb9c3628b21da7df647ef415453978ffc6985ecc4d1732590f601",
+      "source_object": "dim_reporting_period"
+    },
+    {
+      "column_count": 8,
+      "file_size_bytes": 1050,
+      "path": "data/processed/powerbi_import/dim_source_release.csv",
+      "row_count": 6,
+      "semantic_table": "Dim Source Release",
+      "sha256": "c0ccd1f97da5d2e2f32d7cd9647776473bb96d45499253c585f8bb9219366873",
+      "source_object": "dim_source_release"
+    },
+    {
+      "column_count": 17,
+      "file_size_bytes": 5501853,
+      "path": "data/processed/powerbi_import/fact_provider_measure.csv",
+      "row_count": 67060,
+      "semantic_table": "Fact Provider Measure",
+      "sha256": "da4561e94dd9ca9c1309e5a2299bcc53d018d6e4f1ba64cabeb7005d133b2ed4",
+      "source_object": "fact_provider_measure"
+    },
+    {
+      "column_count": 10,
+      "file_size_bytes": 17333,
+      "path": "data/processed/powerbi_import/fact_provider_state_benchmark.csv",
+      "row_count": 784,
+      "semantic_table": "Fact State Benchmark",
+      "sha256": "b6129a2ef6f05ca9baead191f7f8504a735c7fbd035318b5b6d084c6d7a81690",
+      "source_object": "fact_provider_state_benchmark"
+    },
+    {
+      "column_count": 7,
+      "file_size_bytes": 432,
+      "path": "data/processed/powerbi_import/fact_provider_national_benchmark.csv",
+      "row_count": 14,
+      "semantic_table": "Fact National Benchmark",
+      "sha256": "ff82d735916edc88589d463076e7ea232cece3c108136bf2e6305ceca6d4c0d0",
+      "source_object": "fact_provider_national_benchmark"
+    },
+    {
+      "column_count": 14,
+      "file_size_bytes": 1004764,
+      "path": "data/processed/powerbi_import/fact_provider_hrrp_measure.csv",
+      "row_count": 18330,
+      "semantic_table": "Fact HRRP",
+      "sha256": "abf7408d1cadc27436264b642dae863e884aa187633e144c7fe53958289137d5",
+      "source_object": "fact_provider_hrrp_measure"
+    },
+    {
+      "column_count": 16,
+      "file_size_bytes": 218694,
+      "path": "data/processed/powerbi_import/fact_provider_program_score.csv",
+      "row_count": 2455,
+      "semantic_table": "Fact HVBP",
+      "sha256": "24f47384fe8cf17920711f2af60d8a72160a5605747b3e65ebb753261229defc",
+      "source_object": "fact_provider_program_score"
+    },
+    {
+      "column_count": 8,
+      "file_size_bytes": 19576,
+      "path": "data/processed/powerbi_import/fact_quality_check.csv",
+      "row_count": 115,
+      "semantic_table": "Fact Quality Check",
+      "sha256": "caac3583c3b60a741af826b8c0daec4db3ac8991d3d0cd4b7ce91e362a6cbe6b",
+      "source_object": "fact_quality_check"
+    }
+  ],
+  "model_name": "Provider Quality Performance",
+  "model_version": "0.1.0",
+  "source_database": "data/processed/provider_quality.sqlite",
+  "source_database_sha256": "c7aa86c0dcaa0386ac516034dc0498875e510f4219a885bff7bae8be58bfffb8"
+}

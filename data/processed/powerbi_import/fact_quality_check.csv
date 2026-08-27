@@ -1,0 +1,116 @@
+﻿quality_check_key,phase,table_name,check_name,status,severity,details,checked_at
+1,source_profile,4gkm-5ypv,candidate_grain_unique,PASS,Critical,Candidate key: State + Measure ID + Start Date + End Date; duplicate groups: 0.,2026-08-26T23:56:38+00:00
+2,source_profile,4gkm-5ypv,candidate_key_complete,PASS,Critical,"Blank means an empty source string, not a suppressed score.",2026-08-26T23:56:38+00:00
+3,source_profile,4gkm-5ypv,column_count_reconciles_to_manifest,PASS,Critical,Column names are preserved exactly as published.,2026-08-26T23:56:38+00:00
+4,source_profile,4gkm-5ypv,row_count_reconciles_to_manifest,PASS,Critical,CSV data rows exclude the header.,2026-08-26T23:56:38+00:00
+5,source_profile,4gkm-5ypv,source_hash_matches_manifest,PASS,Critical,Raw file SHA-256 is recalculated before profiling.,2026-08-26T23:56:38+00:00
+6,source_profile,4gkm-5ypv,suppression_text_preserved,PASS,Critical,All raw fields were ingested as strings with NA coercion disabled.,2026-08-26T23:56:38+00:00
+7,source_profile,632h-zaca,candidate_grain_unique,PASS,Critical,Candidate key: Facility ID + Measure ID + Start Date + End Date; duplicate groups: 0.,2026-08-26T23:56:38+00:00
+8,source_profile,632h-zaca,candidate_key_complete,PASS,Critical,"Blank means an empty source string, not a suppressed score.",2026-08-26T23:56:38+00:00
+9,source_profile,632h-zaca,column_count_reconciles_to_manifest,PASS,Critical,Column names are preserved exactly as published.,2026-08-26T23:56:38+00:00
+10,source_profile,632h-zaca,facility_id_six_character_string,PASS,Critical,Facility IDs were ingested as strings; 10486 row values begin with zero and 2296 row values are six-character federal VA/DoD identifiers rather than numeric CCNs.,2026-08-26T23:56:38+00:00
+11,source_profile,632h-zaca,row_count_reconciles_to_manifest,PASS,Critical,CSV data rows exclude the header.,2026-08-26T23:56:38+00:00
+12,source_profile,632h-zaca,source_hash_matches_manifest,PASS,Critical,Raw file SHA-256 is recalculated before profiling.,2026-08-26T23:56:38+00:00
+13,source_profile,632h-zaca,suppression_text_preserved,PASS,Critical,All raw fields were ingested as strings with NA coercion disabled.,2026-08-26T23:56:38+00:00
+14,source_profile,9n3s-kdb3,candidate_grain_unique,PASS,Critical,Candidate key: Facility ID + Measure Name + Start Date + End Date; duplicate groups: 0.,2026-08-26T23:56:38+00:00
+15,source_profile,9n3s-kdb3,candidate_key_complete,PASS,Critical,"Blank means an empty source string, not a suppressed score.",2026-08-26T23:56:38+00:00
+16,source_profile,9n3s-kdb3,column_count_reconciles_to_manifest,PASS,Critical,Column names are preserved exactly as published.,2026-08-26T23:56:38+00:00
+17,source_profile,9n3s-kdb3,facility_id_six_character_string,PASS,Critical,Facility IDs were ingested as strings; 3354 row values begin with zero and 0 row values are six-character federal VA/DoD identifiers rather than numeric CCNs.,2026-08-26T23:56:38+00:00
+18,source_profile,9n3s-kdb3,row_count_reconciles_to_manifest,PASS,Critical,CSV data rows exclude the header.,2026-08-26T23:56:38+00:00
+19,source_profile,9n3s-kdb3,source_hash_matches_manifest,PASS,Critical,Raw file SHA-256 is recalculated before profiling.,2026-08-26T23:56:38+00:00
+20,source_profile,9n3s-kdb3,suppression_text_preserved,PASS,Critical,All raw fields were ingested as strings with NA coercion disabled.,2026-08-26T23:56:38+00:00
+21,source_profile,cvcs-xecj,candidate_grain_unique,PASS,Critical,Candidate key: Measure ID + Start Date + End Date; duplicate groups: 0.,2026-08-26T23:56:38+00:00
+22,source_profile,cvcs-xecj,candidate_key_complete,PASS,Critical,"Blank means an empty source string, not a suppressed score.",2026-08-26T23:56:38+00:00
+23,source_profile,cvcs-xecj,column_count_reconciles_to_manifest,PASS,Critical,Column names are preserved exactly as published.,2026-08-26T23:56:38+00:00
+24,source_profile,cvcs-xecj,row_count_reconciles_to_manifest,PASS,Critical,CSV data rows exclude the header.,2026-08-26T23:56:38+00:00
+25,source_profile,cvcs-xecj,source_hash_matches_manifest,PASS,Critical,Raw file SHA-256 is recalculated before profiling.,2026-08-26T23:56:38+00:00
+26,source_profile,cvcs-xecj,suppression_text_preserved,PASS,Critical,All raw fields were ingested as strings with NA coercion disabled.,2026-08-26T23:56:38+00:00
+27,source_profile,xubh-q36u,candidate_grain_unique,PASS,Critical,Candidate key: Facility ID; duplicate groups: 0.,2026-08-26T23:56:38+00:00
+28,source_profile,xubh-q36u,candidate_key_complete,PASS,Critical,"Blank means an empty source string, not a suppressed score.",2026-08-26T23:56:38+00:00
+29,source_profile,xubh-q36u,column_count_reconciles_to_manifest,PASS,Critical,Column names are preserved exactly as published.,2026-08-26T23:56:38+00:00
+30,source_profile,xubh-q36u,facility_id_six_character_string,PASS,Critical,Facility IDs were ingested as strings; 854 row values begin with zero and 164 row values are six-character federal VA/DoD identifiers rather than numeric CCNs.,2026-08-26T23:56:38+00:00
+31,source_profile,xubh-q36u,row_count_reconciles_to_manifest,PASS,Critical,CSV data rows exclude the header.,2026-08-26T23:56:38+00:00
+32,source_profile,xubh-q36u,source_hash_matches_manifest,PASS,Critical,Raw file SHA-256 is recalculated before profiling.,2026-08-26T23:56:38+00:00
+33,source_profile,xubh-q36u,suppression_text_preserved,PASS,Critical,All raw fields were ingested as strings with NA coercion disabled.,2026-08-26T23:56:38+00:00
+34,source_profile,ypbt-wvdk,candidate_grain_unique,PASS,Critical,Candidate key: Facility ID + Fiscal Year; duplicate groups: 0.,2026-08-26T23:56:38+00:00
+35,source_profile,ypbt-wvdk,candidate_key_complete,PASS,Critical,"Blank means an empty source string, not a suppressed score.",2026-08-26T23:56:38+00:00
+36,source_profile,ypbt-wvdk,column_count_reconciles_to_manifest,PASS,Critical,Column names are preserved exactly as published.,2026-08-26T23:56:38+00:00
+37,source_profile,ypbt-wvdk,facility_id_six_character_string,PASS,Critical,Facility IDs were ingested as strings; 465 row values begin with zero and 0 row values are six-character federal VA/DoD identifiers rather than numeric CCNs.,2026-08-26T23:56:38+00:00
+38,source_profile,ypbt-wvdk,row_count_reconciles_to_manifest,PASS,Critical,CSV data rows exclude the header.,2026-08-26T23:56:38+00:00
+39,source_profile,ypbt-wvdk,source_hash_matches_manifest,PASS,Critical,Raw file SHA-256 is recalculated before profiling.,2026-08-26T23:56:38+00:00
+40,source_profile,ypbt-wvdk,suppression_text_preserved,PASS,Critical,All raw fields were ingested as strings with NA coercion disabled.,2026-08-26T23:56:38+00:00
+41,source_profile,4gkm-5ypv,candidate_grain_resolved,PASS,High,Candidate grain must be confirmed before fact modeling.,2026-08-26T23:56:38+00:00
+42,source_profile,4gkm-5ypv,exact_duplicate_rows,PASS,High,Counts every row participating in an exact duplicate.,2026-08-26T23:56:38+00:00
+43,source_profile,4gkm-5ypv,measurement_period_order,PASS,High,Validated parsed start date <= parsed end date. HRRP fiscal year is also carried as program context from the official file name.,2026-08-26T23:56:38+00:00
+44,source_profile,4gkm-5ypv,schema_matches_baseline,PASS,High,Column names and order are compared with the accepted Provider schema baseline.,2026-08-26T23:56:38+00:00
+45,source_profile,4gkm-5ypv,source_release_date_recorded,PASS,High,Catalog release date is distinct from measurement period.,2026-08-26T23:56:38+00:00
+46,source_profile,632h-zaca,candidate_grain_resolved,PASS,High,Candidate grain must be confirmed before fact modeling.,2026-08-26T23:56:38+00:00
+47,source_profile,632h-zaca,exact_duplicate_rows,PASS,High,Counts every row participating in an exact duplicate.,2026-08-26T23:56:38+00:00
+48,source_profile,632h-zaca,measurement_period_order,PASS,High,Validated parsed start date <= parsed end date. HRRP fiscal year is also carried as program context from the official file name.,2026-08-26T23:56:38+00:00
+49,source_profile,632h-zaca,schema_matches_baseline,PASS,High,Column names and order are compared with the accepted Provider schema baseline.,2026-08-26T23:56:38+00:00
+50,source_profile,632h-zaca,source_release_date_recorded,PASS,High,Catalog release date is distinct from measurement period.,2026-08-26T23:56:38+00:00
+51,source_profile,9n3s-kdb3,candidate_grain_resolved,PASS,High,Candidate grain must be confirmed before fact modeling.,2026-08-26T23:56:38+00:00
+52,source_profile,9n3s-kdb3,exact_duplicate_rows,PASS,High,Counts every row participating in an exact duplicate.,2026-08-26T23:56:38+00:00
+53,source_profile,9n3s-kdb3,measurement_period_order,PASS,High,Validated parsed start date <= parsed end date. HRRP fiscal year is also carried as program context from the official file name.,2026-08-26T23:56:38+00:00
+54,source_profile,9n3s-kdb3,schema_matches_baseline,PASS,High,Column names and order are compared with the accepted Provider schema baseline.,2026-08-26T23:56:38+00:00
+55,source_profile,9n3s-kdb3,source_release_date_recorded,PASS,High,Catalog release date is distinct from measurement period.,2026-08-26T23:56:38+00:00
+56,source_profile,cvcs-xecj,candidate_grain_resolved,PASS,High,Candidate grain must be confirmed before fact modeling.,2026-08-26T23:56:38+00:00
+57,source_profile,cvcs-xecj,exact_duplicate_rows,PASS,High,Counts every row participating in an exact duplicate.,2026-08-26T23:56:38+00:00
+58,source_profile,cvcs-xecj,measurement_period_order,PASS,High,Validated parsed start date <= parsed end date. HRRP fiscal year is also carried as program context from the official file name.,2026-08-26T23:56:38+00:00
+59,source_profile,cvcs-xecj,schema_matches_baseline,PASS,High,Column names and order are compared with the accepted Provider schema baseline.,2026-08-26T23:56:38+00:00
+60,source_profile,cvcs-xecj,source_release_date_recorded,PASS,High,Catalog release date is distinct from measurement period.,2026-08-26T23:56:38+00:00
+61,source_profile,xubh-q36u,candidate_grain_resolved,PASS,High,Candidate grain must be confirmed before fact modeling.,2026-08-26T23:56:38+00:00
+62,source_profile,xubh-q36u,exact_duplicate_rows,PASS,High,Counts every row participating in an exact duplicate.,2026-08-26T23:56:38+00:00
+63,source_profile,xubh-q36u,measurement_period_order,PASS,High,This source is a release-versioned facility dimension. Its overall rating summarizes underlying measures with differing collection periods; no row-level measurement dates are published.,2026-08-26T23:56:38+00:00
+64,source_profile,xubh-q36u,schema_matches_baseline,PASS,High,Column names and order are compared with the accepted Provider schema baseline.,2026-08-26T23:56:38+00:00
+65,source_profile,xubh-q36u,source_release_date_recorded,PASS,High,Catalog release date is distinct from measurement period.,2026-08-26T23:56:38+00:00
+66,source_profile,ypbt-wvdk,candidate_grain_resolved,PASS,High,Candidate grain must be confirmed before fact modeling.,2026-08-26T23:56:38+00:00
+67,source_profile,ypbt-wvdk,exact_duplicate_rows,PASS,High,Counts every row participating in an exact duplicate.,2026-08-26T23:56:38+00:00
+68,source_profile,ypbt-wvdk,measurement_period_order,PASS,High,HVBP TPS is keyed by Fiscal Year; the source does not publish start/end measurement dates in this file.,2026-08-26T23:56:38+00:00
+69,source_profile,ypbt-wvdk,schema_matches_baseline,PASS,High,Column names and order are compared with the accepted Provider schema baseline.,2026-08-26T23:56:38+00:00
+70,source_profile,ypbt-wvdk,source_release_date_recorded,PASS,High,Catalog release date is distinct from measurement period.,2026-08-26T23:56:38+00:00
+71,source_profile,4gkm-5ypv,footnote_columns_preserved,PASS,Medium,Expected presence is based on the April 2026 CMS Hospital Downloadable Database Data Dictionary.,2026-08-26T23:56:38+00:00
+72,source_profile,4gkm-5ypv,numeric_field_parse_profile,PASS,Medium,Suppression tokens and blanks are excluded from the denominator; no value is replaced with zero.,2026-08-26T23:56:38+00:00
+73,source_profile,632h-zaca,footnote_columns_preserved,PASS,Medium,Expected presence is based on the April 2026 CMS Hospital Downloadable Database Data Dictionary.,2026-08-26T23:56:38+00:00
+74,source_profile,632h-zaca,numeric_field_parse_profile,PASS,Medium,Suppression tokens and blanks are excluded from the denominator; no value is replaced with zero.,2026-08-26T23:56:38+00:00
+75,source_profile,9n3s-kdb3,footnote_columns_preserved,PASS,Medium,Expected presence is based on the April 2026 CMS Hospital Downloadable Database Data Dictionary.,2026-08-26T23:56:38+00:00
+76,source_profile,9n3s-kdb3,numeric_field_parse_profile,PASS,Medium,Suppression tokens and blanks are excluded from the denominator; no value is replaced with zero.,2026-08-26T23:56:38+00:00
+77,source_profile,cvcs-xecj,footnote_columns_preserved,PASS,Medium,Expected presence is based on the April 2026 CMS Hospital Downloadable Database Data Dictionary.,2026-08-26T23:56:38+00:00
+78,source_profile,cvcs-xecj,numeric_field_parse_profile,PASS,Medium,Suppression tokens and blanks are excluded from the denominator; no value is replaced with zero.,2026-08-26T23:56:38+00:00
+79,source_profile,xubh-q36u,footnote_columns_preserved,PASS,Medium,Expected presence is based on the April 2026 CMS Hospital Downloadable Database Data Dictionary.,2026-08-26T23:56:38+00:00
+80,source_profile,xubh-q36u,numeric_field_parse_profile,PASS,Medium,Suppression tokens and blanks are excluded from the denominator; no value is replaced with zero.,2026-08-26T23:56:38+00:00
+81,source_profile,ypbt-wvdk,footnote_columns_preserved,PASS,Medium,Expected presence is based on the April 2026 CMS Hospital Downloadable Database Data Dictionary.,2026-08-26T23:56:38+00:00
+82,source_profile,ypbt-wvdk,numeric_field_parse_profile,PASS,Medium,Suppression tokens and blanks are excluded from the denominator; no value is replaced with zero.,2026-08-26T23:56:38+00:00
+83,provider_model,dim_source_release,row_count_reconciliation,PASS,Critical,Modeled row count reconciles to source or expected dimension.,2026-08-26T23:57:23+00:00
+84,provider_model,dim_geography,row_count_reconciliation,PASS,Critical,Modeled row count reconciles to source or expected dimension.,2026-08-26T23:57:23+00:00
+85,provider_model,dim_reporting_period,row_count_reconciliation,PASS,Critical,Modeled row count reconciles to source or expected dimension.,2026-08-26T23:57:23+00:00
+86,provider_model,dim_facility,row_count_reconciliation,PASS,Critical,Modeled row count reconciles to source or expected dimension.,2026-08-26T23:57:23+00:00
+87,provider_model,dim_measure,row_count_reconciliation,PASS,Critical,Modeled row count reconciles to source or expected dimension.,2026-08-26T23:57:23+00:00
+88,provider_model,fact_provider_measure,row_count_reconciliation,PASS,Critical,Modeled row count reconciles to source or expected dimension.,2026-08-26T23:57:23+00:00
+89,provider_model,fact_provider_state_benchmark,row_count_reconciliation,PASS,Critical,Modeled row count reconciles to source or expected dimension.,2026-08-26T23:57:23+00:00
+90,provider_model,fact_provider_national_benchmark,row_count_reconciliation,PASS,Critical,Modeled row count reconciles to source or expected dimension.,2026-08-26T23:57:23+00:00
+91,provider_model,fact_provider_hrrp_measure,row_count_reconciliation,PASS,Critical,Modeled row count reconciles to source or expected dimension.,2026-08-26T23:57:23+00:00
+92,provider_model,fact_provider_program_score,row_count_reconciliation,PASS,Critical,Modeled row count reconciles to source or expected dimension.,2026-08-26T23:57:23+00:00
+93,provider_model,fact_provider_measure,declared_grain_duplicate_groups,PASS,Critical,Declared fact grain includes the dataset source release.,2026-08-26T23:57:23+00:00
+94,provider_model,fact_provider_state_benchmark,declared_grain_duplicate_groups,PASS,Critical,Declared fact grain includes the dataset source release.,2026-08-26T23:57:23+00:00
+95,provider_model,fact_provider_national_benchmark,declared_grain_duplicate_groups,PASS,Critical,Declared fact grain includes the dataset source release.,2026-08-26T23:57:23+00:00
+96,provider_model,fact_provider_hrrp_measure,declared_grain_duplicate_groups,PASS,Critical,Declared fact grain includes the dataset source release.,2026-08-26T23:57:23+00:00
+97,provider_model,fact_provider_program_score,declared_grain_duplicate_groups,PASS,Critical,Declared fact grain includes the dataset source release.,2026-08-26T23:57:23+00:00
+98,provider_model,dim_facility,facility_id_length,PASS,Critical,Every Facility ID is stored as a six-character string.,2026-08-26T23:57:23+00:00
+99,provider_model,dim_facility,leading_zero_facility_count,PASS,Critical,Leading-zero Facility IDs reconcile to the source.,2026-08-26T23:57:23+00:00
+100,provider_model,dim_facility,alternate_federal_facility_count,PASS,High,VA/DoD identifiers are preserved and not mislabeled as CCNs.,2026-08-26T23:57:23+00:00
+101,provider_model,dim_facility,source_specific_fallback_facility_count,PASS,High,Program-source facilities missing from the current General Information release are retained and explicitly flagged.,2026-08-26T23:57:23+00:00
+102,provider_model,fact_provider_measure,reportable_score_parse_failures,PASS,Critical,Reportable scores must parse; suppressed values are excluded.,2026-08-26T23:57:23+00:00
+103,provider_model,fact_provider_measure,nonreportable_zero_coercions,PASS,Critical,Missing and suppressed scores must never become zero.,2026-08-26T23:57:23+00:00
+104,provider_model,fact_provider_measure,unexplained_interval_order_violations,PASS,High,Applicable lower/score/upper intervals are ordered after separating CMS Footnote 29 partial-period exceptions.,2026-08-26T23:57:23+00:00
+105,provider_model,fact_provider_measure,footnote_29_interval_exceptions,PASS,Medium,Known release-specific Footnote 29 interval exceptions are surfaced as documented exceptions rather than treated as ordinary intervals.,2026-08-26T23:57:23+00:00
+106,provider_model,fact_provider_hrrp_measure,reportable_ratio_parse_failures,PASS,Critical,Reportable official HRRP ratios must parse.,2026-08-26T23:57:23+00:00
+107,provider_model,fact_provider_program_score,reportable_tps_parse_failures,PASS,Critical,Reportable official TPS values must parse.,2026-08-26T23:57:23+00:00
+108,provider_model,fact_provider_program_score,unexpected_fiscal_year_rows,PASS,High,This snapshot is the FY 2026 HVBP file.,2026-08-26T23:57:23+00:00
+109,provider_model,dim_measure,incomplete_semantic_metadata,PASS,Critical,"Every measure requires unit, direction, period semantics, suppression, and interpretation limits.",2026-08-26T23:57:23+00:00
+110,provider_model,vw_provider_measure_reporting,view_row_reconciliation,PASS,Critical,Reporting view preserves one row per Provider measure fact.,2026-08-26T23:57:23+00:00
+111,provider_model,vw_provider_benchmark_join_coverage,missing_national_benchmark_rows,PASS,High,Every Provider measure row matches an official national context row.,2026-08-26T23:57:23+00:00
+112,provider_model,vw_provider_benchmark_join_coverage,missing_state_benchmark_rows,PASS,High,Every Provider measure row matches official state category context.,2026-08-26T23:57:23+00:00
+113,provider_model,fact_quality_check,source_profile_nonpass_checks,PASS,Critical,Provider model is gated on a clean accepted source profile.,2026-08-26T23:57:23+00:00
+114,provider_model,database,foreign_key_violations,PASS,Critical,SQLite foreign-key check across all modeled facts and dimensions.,2026-08-26T23:57:23+00:00
+115,provider_model,database,sqlite_integrity_check,PASS,Critical,SQLite database structural integrity check.,2026-08-26T23:57:23+00:00

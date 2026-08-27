@@ -1,0 +1,78 @@
+table 'Dim Facility'
+
+	measure 'Facility Count' = DISTINCTCOUNT('Dim Facility'[Facility ID])
+		formatString: #,0
+
+	column 'Facility Key'
+		dataType: int64
+		isHidden
+		sourceColumn: facility_key
+
+	column 'Facility ID'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: facility_id
+
+	column 'Facility Name'
+		dataType: string
+		sourceColumn: facility_name
+
+	column 'State Code'
+		dataType: string
+		sourceColumn: state_code
+
+	column 'Hospital Type'
+		dataType: string
+		sourceColumn: hospital_type
+
+	column 'Hospital Ownership'
+		dataType: string
+		sourceColumn: hospital_ownership
+
+	column 'Current General Info Match'
+		dataType: boolean
+		sourceColumn: is_current_general_info_match
+
+	column 'Alternate Federal ID'
+		dataType: boolean
+		sourceColumn: is_alternate_federal_id
+
+	column 'Overall Rating'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: overall_rating_numeric
+
+	column 'Overall Rating Raw'
+		dataType: string
+		isHidden
+		sourceColumn: overall_rating_raw
+
+	column 'Overall Rating Footnote'
+		dataType: string
+		sourceColumn: overall_rating_footnote_code
+
+	column 'Geography Key'
+		dataType: int64
+		isHidden
+		sourceColumn: geography_key
+
+	partition 'Dim Facility' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\10619\Documents\Projects\provider-payer-quality-reporting\data\processed\powerbi_import\dim_facility.csv"),
+				        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]
+				    ),
+				    PromotedHeaders = Table.PromoteHeaders(
+				        Source,
+				        [PromoteAllScalars=true]
+				    ),
+				    TypedColumns = Table.TransformColumnTypes(
+				        PromotedHeaders,
+				        {{"facility_key", Int64.Type}, {"facility_id", type text}, {"facility_name", type text}, {"state_code", type text}, {"hospital_type", type text}, {"hospital_ownership", type text}, {"is_current_general_info_match", type logical}, {"is_alternate_federal_id", type logical}, {"overall_rating_numeric", type number}, {"overall_rating_raw", type text}, {"overall_rating_footnote_code", type text}, {"geography_key", Int64.Type}},
+				        "en-US"
+				    )
+				in
+				    TypedColumns
+

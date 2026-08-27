@@ -1,0 +1,11 @@
+﻿{
+    "model_name":  "Provider Quality Performance",
+    "compatibility_level":  1600,
+    "table_count":  11,
+    "relationship_count":  19,
+    "measure_count":  15,
+    "expected_table_count":  11,
+    "expected_relationship_count":  19,
+    "expected_measure_count":  15,
+    "status":  "PASS"
+}
